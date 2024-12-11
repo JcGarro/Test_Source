@@ -1,0 +1,77 @@
+1. To know the ip address:
+   go to cmd > type "ping + hostname" ( example : ping sw or ping delta)
+2. connect or create session to the RPi
+	ssh pi@(ip address)   [example : ssh pi@172.20.88.13]
+	password: eigsource
+3. change directory
+	cd
+4. list all items
+	ls
+5. go back to last directory
+	cd ..\
+6. txt file editting
+	type, nano wave.py
+	Click Ctrl + O, click enter (if will not edit the file name)
+	Click Ctrl + X
+7. create new text file
+	nano code.py > then save
+8. remove or delete file
+	rm wave.py
+9. display file content 
+	cat wave.py
+10. execute py file script
+	./wave.py
+11. download file via ssh
+	scp <from> <to>
+	scp pi@172.20.88.13:trial.py trial.py
+	(will ask for the password)
+12. Make py file executable
+	chmod +x <file>
+13. header for the program to be executable
+	#! /usr/bin/python3
+14. call main code and its functions (ex. )
+	sudo python wave_test.py -i "Status;"
+15. send values
+	sudo python wave_test.py -i "v1,a120"
+16. restart Rpi
+	sudo reboot
+17. multiple commands
+	sudo python wave_test.py -i "v1,on,a120;v2,on,a120;v3,on,a120;"
+18. initial values
+	sudo python wave_test.py -i "v1,on,a120;v2,on,a120;v3,on,a120;c1,on,a1;c2,on,a1;c3,on,a1;"
+	
+	sudo python wavemain.py -i "v1,on,a120;v2,on,a120;v3,on,a120;c1,on,a1;c2,on,a1;c3,on,a1;v1,p0;v2,p120;v3,p240;c1,p0;c2,p120;c3,p240;f60"
+	#turn off
+	sudo python wavemain.py -i "v1,off;v2,off;v3,off;c1,off;c2,off;c3,off;"
+	sudo python wavemain.py -i "v1,p0;v2,p120;v3,p240;c1,p0;c2,p120;c3,p240;"
+	sudo python wavemain.py -i "v1,p0;v2,p120;v3,p240;"
+	sudo python wavemain.py -i "c1,p0;c2,p120;c3,p240;"
+
+ Dirs
+ 1. C:\Users\jgarro.EIG\Desktop\Feedb\
+
+ Shorcuts:
+ 1. rm wavefb.py
+ 2. scp C:\Users\Admin\Desktop\TS\wavefb.py pi@delta:wavefb.py
+ 3. chmod +x wavefb.py
+ 4. scp C:\Users\Admin\Desktop\TS\main.py pi@delta:wavemain.py
+ 5. chmod +x wavemain.py
+ 6.
+ 7. scp pi@delta:TestDeptSourceParameters.xml C:\Users\Admin\Desktop\TS\TestDeptSourceParameters.xml (windows)
+ 8. scp C:\Users\Admin\Desktop\TS\TestDeptSourceParameters.xml pi@delta:TestDeptSourceParameters.xml (windows)
+ 9. sudo python wavemain.py -i "Status;"
+10. 
+11. nano TestDeptSourceParameters.xml
+12. rm TestDeptSourceParameters.xml
+13. cp Desktop/'Source Control Files'/TestDeptSourceParameters.xml TestDeptSourceParametersF.xml (linux files from rpi to rpi)
+	working directory = directory where we are currently working
+14. scp pi@172.20.104.34:wavefb.py C:\Users\Admin\Desktop\TS\wavefb.py
+15. scp C:\Users\Admin\Desktop\TS\wavefb.py pi@172.20.104.34:wavefb.py
+
+ Observations:
+ 1. time completion for cal
+  22 seconds
+
+
+
+  scp pi@172.20.104.34:Desktop/'Source Control Files'/TestDeptSourceParameters.xml C:\Users\Admin\Desktop\
