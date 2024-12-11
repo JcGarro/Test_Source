@@ -1486,7 +1486,7 @@ while ourmeter.MeterConnected == True:
 	### Logic
 		##Magnitudes
 		#Voltage A
-		if abs(voltAu-voltA)>1.8 and voltAStat == "ON" and voltA != 0:
+		if abs(voltAu-voltA)>1.8 and voltAStat == "ON" and voltAdb != 0:
 			voltAns = voltA/voltAdb
 			#Write_Status(xmltree, root, "v1", "avg_slope", voltAns )\
 			Set_Magnitude(int(voltAu/voltAns), int(voltAdb), 0xBF, 0x1C)
@@ -1494,33 +1494,33 @@ while ourmeter.MeterConnected == True:
 		
 
 		#Voltage B
-		if abs(voltBu-voltB)>1.8 and voltBStat == "ON" and voltB != 0:
+		if abs(voltBu-voltB)>1.8 and voltBStat == "ON" and voltBdb != 0:
 			voltBns = voltB/voltBdb
 			#Write_Status(xmltree, root, "v2", "avg_slope", voltBns )
 			Set_Magnitude(int(voltBu/voltBns), int(voltBdb), 0xBF, 0x1D)
 			Write_Status(xmltree, root, "v2", "magnitude", int(voltBu/voltBns))
 		
 		#Voltage C
-		if abs(voltCu-voltC)>1.8 and voltCStat == "ON" and voltC != 0:
+		if abs(voltCu-voltC)>1.8 and voltCStat == "ON" and voltCdb != 0:
 			voltCns = voltC/voltCdb
 			Set_Magnitude(int(voltCu/voltCns), int(voltCdb), 0xBF, 0x1E)
 			Write_Status(xmltree, root, "v3", "magnitude", int(voltCu/voltCns))
 
 		#Current A
 		#print("Diff :"+str(abs(currAu-currA)))
-		if abs(currAu-currA)>0.02 and currAStat == "ON" and currA != 0:
+		if abs(currAu-currA)>0.02 and currAStat == "ON" and currAdb != 0:
 			currAns = currA/currAdb
 			Set_Magnitude(int(round(currAu/currAns)), int(currAdb), 0xEF, 0x1C)
 			Write_Status(xmltree, root, "c1", "magnitude", int(round(currAu/currAns)))
 
 		#Current B
-		if abs(currBu-currB)>0.02 and currBStat == "ON" and currB != 0:
+		if abs(currBu-currB)>0.02 and currBStat == "ON" and currBdb != 0:
 			currBns = currB/currBdb
 			Set_Magnitude(int(round(currBu/currBns)), int(currBdb), 0xEF, 0x1D)
 			Write_Status(xmltree, root, "c2", "magnitude", int(round(currBu/currBns)))
 
 		#Current C
-		if abs(currCu-currC)>0.02 and currCStat == "ON" and currC != 0:
+		if abs(currCu-currC)>0.02 and currCStat == "ON" and currCdb != 0:
 			currCns = currC/currCdb
 			Set_Magnitude(int(round(currCu/currCns)), int(currCdb), 0xEF, 0x1E)
 			Write_Status(xmltree, root, "c3", "magnitude", int(round(currCu/currCns)))
