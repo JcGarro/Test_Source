@@ -14,7 +14,7 @@ from pymodbus.payload import BinaryPayloadBuilder
 from pymodbus.client.sync import ModbusTcpClient as NetworkClient
 from pymodbus.client.sync import ModbusSerialClient as SerialClient
 
-#
+
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(27, GPIO.OUT)	#set relay 1 to Set
